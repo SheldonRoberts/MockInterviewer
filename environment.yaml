@@ -1,0 +1,7 @@
+name: mock_interviewer_env
+
+dependencies:
+  - matplotlib=3.7.1
+  - python=3.8
+  - pip:
+    - streamlit==1.23.1
