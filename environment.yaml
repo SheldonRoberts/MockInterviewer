@@ -6,3 +6,4 @@ dependencies:
   - pip:
     - streamlit==1.23.1
     - streamlit-audiorecorder==0.0.2
+    - st-annotated-text==4.0.0

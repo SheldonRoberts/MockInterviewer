@@ -2,8 +2,10 @@
 
 import streamlit as st
 from audiorecorder import audiorecorder
+from annotated_text import annotated_text
 import random
 from core.speech_to_text import speech_to_text
+from core.annotate_text import annotate_raw_text
 
 st.title("Mock Interview Dashboard")
 
@@ -40,3 +42,18 @@ if st.button("Generate Report"):
     # convert audio to text
     text = speech_to_text(f"data/audio_responses/{audio_name}.mp3")
     st.write(text)
+
+    with st.expander("Word Choice Review"):
+        filler_text, num_fillers = annotate_raw_text(text)
+        # make a red metric
+        st.metric("Filler Words", num_fillers)
+        annotated_text(filler_text)
+
+    with st.expander("STAR Method Feedback"):
+        st.write("STAR Method Feedback")
+
+    with st.expander("Top Skills Shown"):
+        st.write("Top Skills Shown")
+
+    with st.expander("Suggested Improvements"):
+        st.write("Suggested Improvements")
