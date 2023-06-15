@@ -5,3 +5,4 @@ dependencies:
   - python=3.8
   - pip:
     - streamlit==1.23.1
+    - streamlit-audiorecorder==0.0.2
